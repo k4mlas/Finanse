@@ -87,12 +87,30 @@
 
     </main>
 
-    
+    <div class="panel">
 
+        <h2 class="panel__title">Dodaj nową transakcję</h2>
 
+        <label for="name">Nazwa:</label>
+        <small>(podaj nazwę transakcji)</small>
+        <input type="text" id="name">
 
+        <label for="amount">Kwota:</label>
+        <small>(podaj kwote transakcji, jesli dodajesz wydatek, postaw znak minusa na poczatku kwoty)</small>
+        <input type="number" id="amount">
 
-
+        <label for="category">Wybierz kategorię</label>
+        <small>([ + ] oznacza przychód, [ - ] oznacza wydatek)</small>
+        <select id="category">
+            <option value="none" disabled selected>Wybierz kategorię</option>
+            <option value="income"> [+] Przychód</option>
+            <option value="shopping"> [-] Zakupy</option>
+            <option value="food"> [-] Jedzenie</option>
+            <option value="cinema"> [-] Kino</option>
+            <option value="holiday"> [-] Wakacje</option>
+            <option value="hospital"> [-] Zdrowie</option>
+        </select>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 
