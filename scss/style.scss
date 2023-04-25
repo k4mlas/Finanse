@@ -76,6 +76,21 @@ h2 {
 				}
 				&__name {
 					font-size: 1.125rem;
+					i {
+						margin-right: 0.625rem;
+					}
+				}
+				&__delete {
+					margin-left: 0.625rem;
+					background: none;
+					border: none;
+					font-size: 1.125rem;
+					color: var(--second-color);
+					cursor: pointer;
+					transition: transform 0.4s;
+					&:hover {
+						transform: rotate(-180deg);
+					}
 				}
 			}
 		}
@@ -93,5 +108,43 @@ h2 {
 				font-weight: bold;
 			}
 		}
+	}
+}
+
+.options {
+	padding: 5rem 2.5rem;
+	width: 31.25rem;
+	border: 1px solid var(--border-color);
+	&__data {
+		&__available {
+			margin-top: -0.625rem;
+			text-align: center;
+			font-size: 3.75rem;
+		}
+	}
+	&__controls {
+		display: flex;
+		justify-content: space-around;
+		margin: 3.125rem 0;
+		&__add,
+		&__delete {
+			padding: 0.75rem 1.25rem;
+			color: var(--second-color);
+			border: 1px solid var(--border-color);
+			border-radius: 0.313rem;
+			background: none;
+			cursor: pointer;
+			transition: color 0.4s, background 0.4s;
+			&:hover {
+				color: var(--first-color);
+				background: var(--second-color);
+			}
+			i{
+				margin-right: 0.625rem;
+			}
+		}
+	}
+	&__style {
+		
 	}
 }
