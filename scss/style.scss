@@ -53,7 +53,6 @@ h2 {
 
 .transactions {
 	width: 62.5rem;
-	background-color: rgb(169, 129, 209);
 	&__list {
 		display: flex;
 		&__incomeArea,
@@ -139,12 +138,36 @@ h2 {
 				color: var(--first-color);
 				background: var(--second-color);
 			}
-			i{
+			i {
 				margin-right: 0.625rem;
 			}
 		}
 	}
 	&__style {
-		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__color {
+			&__light,
+			&__dark {
+				margin: 0 30px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: transform 0.4s;
+				&:hover {
+					transform: scale(0.8);
+				}
+			}
+			&__light {
+				background: rgb(225, 232, 237);
+				border: 1px solid rgb(46, 44, 44);
+			}
+			&__dark {
+				background: rgb(46, 44, 44);
+				border: 1px solid rgb(225, 232, 237);
+			}
+		}
 	}
 }
