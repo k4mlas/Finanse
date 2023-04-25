@@ -43,12 +43,55 @@ main {
 	align-items: flex-start;
 }
 
+h2 {
+	margin-bottom: 1.875rem;
+	text-align: center;
+	font-size: 2.25rem;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
 .transactions {
-	&__title {
-		margin-bottom: 1.875rem;
-		text-align: center;
-		font-size: 2.25rem;
-		font-weight: 200;
-		text-transform: uppercase;
+	width: 62.5rem;
+	background-color: rgb(169, 129, 209);
+	&__list {
+		display: flex;
+		&__incomeArea,
+		&__expensesArea {
+			margin: 0 1.25rem;
+			padding: 1.875rem;
+			width: 50%;
+			border: 1px solid var(--border-color);
+			&__title {
+				font-size: 1.75rem;
+				text-align: center;
+			}
+			&__transaction {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.625rem 0;
+				border-bottom: 1px solid var(--border-color);
+				&:last-child {
+					border-bottom: none;
+				}
+				&__name {
+					font-size: 1.125rem;
+				}
+			}
+		}
+		&__incomeArea {
+			&__title,
+			&__transaction__amount {
+				color: rgb(19, 200, 108);
+				font-weight: bold;
+			}
+		}
+		&__expensesArea {
+			&__title,
+			&__transaction__amount {
+				color: rgb(255, 104, 104);
+				font-weight: bold;
+			}
+		}
 	}
 }

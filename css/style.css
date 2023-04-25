@@ -43,10 +43,48 @@ main {
   align-items: flex-start;
 }
 
-.transactions__title {
+h2 {
   margin-bottom: 1.875rem;
   text-align: center;
   font-size: 2.25rem;
   font-weight: 200;
   text-transform: uppercase;
+}
+
+.transactions {
+  width: 62.5rem;
+  background-color: rgb(169, 129, 209);
+}
+.transactions__list {
+  display: flex;
+}
+.transactions__list__incomeArea, .transactions__list__expensesArea {
+  margin: 0 1.25rem;
+  padding: 1.875rem;
+  width: 50%;
+  border: 1px solid var(--border-color);
+}
+.transactions__list__incomeArea__title, .transactions__list__expensesArea__title {
+  font-size: 1.75rem;
+  text-align: center;
+}
+.transactions__list__incomeArea__transaction, .transactions__list__expensesArea__transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.transactions__list__incomeArea__transaction:last-child, .transactions__list__expensesArea__transaction:last-child {
+  border-bottom: none;
+}
+.transactions__list__incomeArea__transaction__name, .transactions__list__expensesArea__transaction__name {
+  font-size: 1.125rem;
+}
+.transactions__list__incomeArea__title, .transactions__list__incomeArea__transaction__amount {
+  color: rgb(19, 200, 108);
+  font-weight: bold;
+}
+.transactions__list__expensesArea__title, .transactions__list__expensesArea__transaction__amount {
+  color: rgb(255, 104, 104);
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
