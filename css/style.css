@@ -209,7 +209,7 @@ h2 {
 }
 .panel__buttons__save, .panel__buttons__cancel {
   margin: 0 30px;
-  font-size: 15px 40px;
+  padding: 15px 40px;
   font-size: 18px;
   color: #fff;
   border: 1px solid #fff;
