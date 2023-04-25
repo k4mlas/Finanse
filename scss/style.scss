@@ -185,4 +185,55 @@ h2 {
 	color: white;
 	background-color: #090947;
 	background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
+	&__title {
+		margin-bottom: 0;
+	}
+	label {
+		margin-top: 2.5rem;
+		margin-bottom: 0.313rem;
+		font-size: 1.625rem;
+	}
+	small {
+		margin-bottom: 0.938rem;
+		font-style: italic;
+		color: #ddd;
+	}
+	input,
+	select {
+		width: 50rem;
+	}
+	input,
+	select,
+	button {
+		padding: 0.625rem 1.25rem;
+		border: 1px solid black;
+		border-radius: 0.313rem;
+	}
+	input,
+	select,
+	option {
+		font-size: 1.125rem;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.875rem;
+		&__save,
+		&__cancel {
+			margin: 0 30px;
+			font-size: 15px 40px;
+			font-size: 18px;
+			color: #fff;
+			border: 1px solid #fff;
+			background: none;
+			cursor: pointer;
+			transition: background-color 0.4s;
+			&:hover {
+				background-color: rgb(25, 27, 51);
+			}
+			i {
+				margin-right: 0.625rem;
+			}
+		}
+	}
 }

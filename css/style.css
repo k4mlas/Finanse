@@ -172,4 +172,54 @@ h2 {
   color: white;
   background-color: #090947;
   background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
+}
+.panel__title {
+  margin-bottom: 0;
+}
+.panel label {
+  margin-top: 2.5rem;
+  margin-bottom: 0.313rem;
+  font-size: 1.625rem;
+}
+.panel small {
+  margin-bottom: 0.938rem;
+  font-style: italic;
+  color: #ddd;
+}
+.panel input,
+.panel select {
+  width: 50rem;
+}
+.panel input,
+.panel select,
+.panel button {
+  padding: 0.625rem 1.25rem;
+  border: 1px solid black;
+  border-radius: 0.313rem;
+}
+.panel input,
+.panel select,
+.panel option {
+  font-size: 1.125rem;
+}
+.panel__buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.875rem;
+}
+.panel__buttons__save, .panel__buttons__cancel {
+  margin: 0 30px;
+  font-size: 15px 40px;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+.panel__buttons__save:hover, .panel__buttons__cancel:hover {
+  background-color: rgb(25, 27, 51);
+}
+.panel__buttons__save i, .panel__buttons__cancel i {
+  margin-right: 0.625rem;
 }/*# sourceMappingURL=style.css.map */
