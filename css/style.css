@@ -6,8 +6,47 @@
   padding: 0;
 }
 
+:root {
+  --first-color: rgb(225, 232, 237);
+  --second-color: rgb(46, 44, 44);
+  --border-color: rgba(0, 0, 0, 0.2);
+}
+
 body {
   height: 100vh;
   font-family: "Montserrat", sans-serif;
-  background-color: #fff;
+  color: var(--second-color);
+  background-color: var(--first-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  height: 13.75rem;
+}
+.header__title {
+  margin-bottom: 0.625rem;
+  font-size: 3.75rem;
+  font-weight: 200;
+}
+.header__text {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.transactions__title {
+  margin-bottom: 1.875rem;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 200;
+  text-transform: uppercase;
 }/*# sourceMappingURL=style.css.map */
