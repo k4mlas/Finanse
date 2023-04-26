@@ -35,6 +35,7 @@ const openPanel = () => {
 
 const closePanel = () => {
 	panel.style.display = 'none';
+	clearPanel();
 };
 
 const checkForm = () => {
@@ -47,6 +48,12 @@ const checkForm = () => {
 	} else {
 		alert('Wypełnij wszystkie pola');
 	}
+};
+
+const clearPanel = () => {
+	inputName.value = '';
+	inputAmount.value = '';
+	categorySelect.selectedIndex = 0;
 };
 
 add.addEventListener('click', openPanel);
