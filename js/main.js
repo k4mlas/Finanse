@@ -28,3 +28,16 @@ let ID = 0;
 let categoIcon;
 let selectedCategory;
 let moneyArr = [0];
+
+const openPanel = () => {
+	panel.style.display = 'flex';
+};
+
+const closePanel = () => {
+	panel.style.display = 'none';
+};
+
+const checkForm = () => {};
+
+add.addEventListener('click', openPanel);
+cancel.addEventListener('click', closePanel);
