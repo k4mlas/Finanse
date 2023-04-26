@@ -56,6 +56,20 @@ const clearPanel = () => {
 	categorySelect.selectedIndex = 0;
 };
 
+const lightColor = () => {
+	root.style.setProperty('--first-color', 'rgb(225, 232, 237)');
+	root.style.setProperty('--second-color', 'rgb(46, 44, 44)');
+	root.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.2)');
+};
+
+const darkColor = () => {
+	root.style.setProperty('--first-color', 'rgb(46, 44, 44)');
+	root.style.setProperty('--second-color', 'rgb(225, 232, 237)');
+	root.style.setProperty('--border-color', 'rgb(225, 232, 237)');
+};
+
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
 save.addEventListener('click', checkForm);
+light.addEventListener('click', lightColor);
+dark.addEventListener('click', darkColor);
