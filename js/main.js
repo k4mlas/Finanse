@@ -22,3 +22,9 @@ const add = document.querySelector('.options__controls__add');
 const deleteAll = document.querySelector('.options__controls__delete');
 const light = document.querySelector('.options__style__color__light');
 const dark = document.querySelector('.options__style__color__dark');
+
+let root = document.documentElement;
+let ID = 0;
+let categoIcon;
+let selectedCategory;
+let moneyArr = [0];
