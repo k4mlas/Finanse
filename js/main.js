@@ -37,7 +37,18 @@ const closePanel = () => {
 	panel.style.display = 'none';
 };
 
-const checkForm = () => {};
+const checkForm = () => {
+	if (
+		inputName.value !== '' &&
+		inputAmount.value !== '' &&
+		categorySelect.value !== 'none'
+	) {
+		console.log('Jest ok');
+	} else {
+		alert('Wypełnij wszystkie pola');
+	}
+};
 
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
+save.addEventListener('click', checkForm);
