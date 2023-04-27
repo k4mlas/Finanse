@@ -70,14 +70,21 @@ const darkColor = () => {
 };
 
 const createNewTransaction = () => {
-	const plusOrMinus = categorySelect.value.textContent;
-	console.log(plusOrMinus);
-
 	const newTransaction = document.createElement('div');
-	newTransaction.classList.add('transactions__list__incomeArea__transaction');
 	newTransaction.setAttribute('id', ID);
-	newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
-	incomeSection.append(newTransaction);
+	if (inputAmount.value > 0) {
+		newTransaction.classList.add('transactions__list__incomeArea__transaction');
+		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
+		incomeSection.append(newTransaction);
+		clearPanel();
+	} else if (inputAmount.value < 0) {
+		newTransaction.classList.add(
+			'transactions__list__expensesArea__transaction'
+		);
+		newTransaction.innerHTML = `<p class="transactions__list__expensesArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__expensesArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__expensesArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
+		expensesSection.append(newTransaction);
+		clearPanel();
+	}
 };
 
 add.addEventListener('click', openPanel);
