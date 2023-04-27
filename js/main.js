@@ -74,17 +74,18 @@ const createNewTransaction = () => {
 	newTransaction.setAttribute('id', ID);
 	if (inputAmount.value > 0) {
 		newTransaction.classList.add('transactions__list__incomeArea__transaction');
-		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
+		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction()"><i class="fas fa-times"></i></button></p>`;
 		incomeSection.append(newTransaction);
-		clearPanel();
 	} else if (inputAmount.value < 0) {
 		newTransaction.classList.add(
 			'transactions__list__expensesArea__transaction'
 		);
-		newTransaction.innerHTML = `<p class="transactions__list__expensesArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__expensesArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__expensesArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
+		newTransaction.innerHTML = `<p class="transactions__list__expensesArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__expensesArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__expensesArea__transaction__delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 		expensesSection.append(newTransaction);
-		clearPanel();
 	}
+	closePanel();
+	moneyArr.push(parseFloat(inputAmount.value));
+	ID++;
 };
 
 add.addEventListener('click', openPanel);
