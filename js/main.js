@@ -88,6 +88,15 @@ const createNewTransaction = () => {
 	ID++;
 };
 
+const checkCategory = (transaction) => {
+switch(transaction) {
+    case `[+] Przychód`: categoIcon = '<i
+    class="fas fa-money-bill-wave"></i>';
+    brake;
+}
+
+};
+
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
 save.addEventListener('click', checkForm);
