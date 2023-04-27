@@ -72,6 +72,7 @@ const darkColor = () => {
 const createNewTransaction = () => {
 	const newTransaction = document.createElement('div');
 	newTransaction.setAttribute('id', ID);
+	checkCategory(selectedCategory);
 	if (inputAmount.value > 0) {
 		newTransaction.classList.add('transactions__list__incomeArea__transaction');
 		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction()"><i class="fas fa-times"></i></button></p>`;
@@ -89,12 +90,30 @@ const createNewTransaction = () => {
 };
 
 const checkCategory = (transaction) => {
-switch(transaction) {
-    case `[+] Przychód`: categoIcon = '<i
-    class="fas fa-money-bill-wave"></i>';
-    brake;
-}
+	switch (transaction) {
+		case `[+] Przychód`:
+			categoIcon = '<i class="fas fa-money-bill-wave"></i>';
+			break;
+		case `[-] Zakupy`:
+			categoIcon = '<i class="fas fa-cart-arrow-down"></i>';
+			break;
+		case `[-] Jedzenie`:
+			categoIcon = '<i class="fas fa-hamburger"></i>';
+			break;
+		case `[-] Kino`:
+			categoIcon = '<i class="fas fa-film"></i>';
+			break;
+		case `[-] Wakacje`:
+			categoIcon = '<i class="fas fa-film"></i>';
+			break;
+		case `[-] Zdrowie`:
+			categoIcon = '<i class="fas fa-film"></i>';
+			break;
+	}
+};
 
+const selectCategory = () => {
+	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
 };
 
 add.addEventListener('click', openPanel);
