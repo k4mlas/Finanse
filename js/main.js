@@ -45,7 +45,6 @@ const checkForm = () => {
 		categorySelect.value !== 'none'
 	) {
 		createNewTransaction();
-		console.log('Jest ok');
 		panel.style.display = 'none';
 	} else {
 		alert('Wypełnij wszystkie pola');
@@ -71,10 +70,13 @@ const darkColor = () => {
 };
 
 const createNewTransaction = () => {
+	const plusOrMinus = categorySelect.value.textContent;
+	console.log(plusOrMinus);
+
 	const newTransaction = document.createElement('div');
 	newTransaction.classList.add('transactions__list__incomeArea__transaction');
 	newTransaction.setAttribute('id', ID);
-	newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name"><i class="fas fa-money-bill-wave"></i>${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
+	newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete"><i class="fas fa-times"></i></button></p>`;
 	incomeSection.append(newTransaction);
 };
 
