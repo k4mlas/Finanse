@@ -70,9 +70,9 @@ const darkColor = () => {
 };
 
 const createNewTransaction = () => {
+	checkCategory(selectedCategory);
 	const newTransaction = document.createElement('div');
 	newTransaction.setAttribute('id', ID);
-	checkCategory(selectedCategory);
 	if (inputAmount.value > 0) {
 		newTransaction.classList.add('transactions__list__incomeArea__transaction');
 		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction()"><i class="fas fa-times"></i></button></p>`;
@@ -87,6 +87,10 @@ const createNewTransaction = () => {
 	closePanel();
 	moneyArr.push(parseFloat(inputAmount.value));
 	ID++;
+};
+
+const selectCategory = () => {
+	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
 };
 
 const checkCategory = (transaction) => {
@@ -110,10 +114,6 @@ const checkCategory = (transaction) => {
 			categoIcon = '<i class="fas fa-film"></i>';
 			break;
 	}
-};
-
-const selectCategory = () => {
-	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
 };
 
 add.addEventListener('click', openPanel);
