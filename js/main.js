@@ -77,7 +77,7 @@ const createNewTransaction = () => {
 	checkCategory(activeCategory);
 	if (inputAmount.value > 0) {
 		newTransaction.classList.add('transactions__list__incomeArea__transaction');
-		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction()"><i class="fas fa-times"></i></button></p>`;
+		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 		incomeSection.append(newTransaction);
 	} else if (inputAmount.value < 0) {
 		newTransaction.classList.add(
@@ -117,8 +117,17 @@ const checkCategory = (selectOfTransaction) => {
 
 const sumAllMoney = () => {
 	const sum = moneyArr.reduce((x, y) => x + y);
-	console.log(sum);
 	wallet.textContent = `${sum} zł`;
+};
+
+const deleteTransaction = (id) => {
+	const transactionToDelete = document.getElementById(id);
+	const amountTransaction = parseFloat(
+		transactionToDelete.childNodes[2].innerText
+	);
+	console.log(amountTransaction);
+	const indexOfTransaction = moneyArr.indexOf(amountTransaction);
+	moneyArr.splice(indexOfTransaction, 1);
 };
 
 add.addEventListener('click', openPanel);
