@@ -91,9 +91,6 @@ const createNewTransaction = () => {
 	ID++;
 };
 
-// const selectCategory = () => {
-// 	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
-// };
 
 const checkCategory = (xx) => {
 	switch (xx) {
