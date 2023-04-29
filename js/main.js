@@ -70,9 +70,11 @@ const darkColor = () => {
 };
 
 const createNewTransaction = () => {
-	checkCategory(selectedCategory);
 	const newTransaction = document.createElement('div');
 	newTransaction.setAttribute('id', ID);
+	const activeCategory =
+		categorySelect.options[categorySelect.selectedIndex].text;
+	checkCategory(activeCategory);
 	if (inputAmount.value > 0) {
 		newTransaction.classList.add('transactions__list__incomeArea__transaction');
 		newTransaction.innerHTML = `<p class="transactions__list__incomeArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__incomeArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__incomeArea__transaction__delete" onclick="deleteTransaction()"><i class="fas fa-times"></i></button></p>`;
@@ -89,28 +91,28 @@ const createNewTransaction = () => {
 	ID++;
 };
 
-const selectCategory = () => {
-	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
-};
+// const selectCategory = () => {
+// 	selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
+// };
 
-const checkCategory = (transaction) => {
-	switch (transaction) {
-		case `[+] Przychód`:
+const checkCategory = (xx) => {
+	switch (xx) {
+		case '[+] Przychód':
 			categoIcon = '<i class="fas fa-money-bill-wave"></i>';
 			break;
-		case `[-] Zakupy`:
+		case '[-] Zakupy':
 			categoIcon = '<i class="fas fa-cart-arrow-down"></i>';
 			break;
-		case `[-] Jedzenie`:
+		case '[-] Jedzenie':
 			categoIcon = '<i class="fas fa-hamburger"></i>';
 			break;
-		case `[-] Kino`:
+		case '[-] Kino':
 			categoIcon = '<i class="fas fa-film"></i>';
 			break;
-		case `[-] Wakacje`:
+		case '[-] Wakacje':
 			categoIcon = '<i class="fas fa-film"></i>';
 			break;
-		case `[-] Zdrowie`:
+		case '[-] Zdrowie':
 			categoIcon = '<i class="fas fa-film"></i>';
 			break;
 	}
