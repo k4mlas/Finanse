@@ -86,13 +86,14 @@ const createNewTransaction = () => {
 		newTransaction.innerHTML = `<p class="transactions__list__expensesArea__transaction__name">${categoIcon} ${inputName.value}</p> <p class="transactions__list__expensesArea__transaction__amount">${inputAmount.value} zł <button class="transactions__list__expensesArea__transaction__delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 		expensesSection.append(newTransaction);
 	}
+	moneyArr.push(parseFloat(inputAmount.value));
+	sumAllMoney();
 	closePanel();
-	moneyArr.push(inputAmount.value);
 	ID++;
 };
 
-const checkCategory = (xx) => {
-	switch (xx) {
+const checkCategory = (selectOfTransaction) => {
+	switch (selectOfTransaction) {
 		case '[+] Przychód':
 			categoIcon = '<i class="fas fa-money-bill-wave"></i>';
 			break;
@@ -114,12 +115,11 @@ const checkCategory = (xx) => {
 	}
 };
 
-const sum = moneyArr.reduce(function (x, y) {
-	x + y;
-});
-wallet.textContent = `${sum} zł`
-
-
+const sumAllMoney = () => {
+	const sum = moneyArr.reduce((x, y) => x + y);
+	console.log(sum);
+	wallet.textContent = `${sum} zł`;
+};
 
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
