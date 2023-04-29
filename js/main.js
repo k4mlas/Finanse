@@ -122,6 +122,7 @@ const sumAllMoney = () => {
 
 const deleteTransaction = (id) => {
 	const transactionToDelete = document.getElementById(id);
+
 	const amountTransaction = parseFloat(
 		transactionToDelete.childNodes[2].innerText
 	);
@@ -129,7 +130,7 @@ const deleteTransaction = (id) => {
 	console.log(indexOfTransaction);
 	moneyArr.splice(indexOfTransaction, 1);
 
-	transactionToDelete.classList('transactions__list__incomeArea__transaction')
+	transactionToDelete.classList.contains('transactions__list__incomeArea__transaction')
 		? incomeSection.removeChild(transactionToDelete)
 		: expensesSection.removeChild(transactionToDelete);
 
