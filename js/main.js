@@ -125,9 +125,15 @@ const deleteTransaction = (id) => {
 	const amountTransaction = parseFloat(
 		transactionToDelete.childNodes[2].innerText
 	);
-	console.log(amountTransaction);
 	const indexOfTransaction = moneyArr.indexOf(amountTransaction);
+	console.log(indexOfTransaction);
 	moneyArr.splice(indexOfTransaction, 1);
+
+	transactionToDelete.classList('transactions__list__incomeArea__transaction')
+		? incomeSection.removeChild(transactionToDelete)
+		: expensesSection.removeChild(transactionToDelete);
+
+	sumAllMoney(moneyArr);
 };
 
 add.addEventListener('click', openPanel);
