@@ -87,10 +87,9 @@ const createNewTransaction = () => {
 		expensesSection.append(newTransaction);
 	}
 	closePanel();
-	moneyArr.push(parseFloat(inputAmount.value));
+	moneyArr.push(inputAmount.value);
 	ID++;
 };
-
 
 const checkCategory = (xx) => {
 	switch (xx) {
@@ -114,6 +113,13 @@ const checkCategory = (xx) => {
 			break;
 	}
 };
+
+const sum = moneyArr.reduce(function (x, y) {
+	x + y;
+});
+wallet.textContent = `${sum} zł`
+
+
 
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
