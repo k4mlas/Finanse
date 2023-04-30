@@ -139,8 +139,18 @@ const deleteTransaction = (id) => {
 	sumAllMoney(moneyArr);
 };
 
+const clearAllTransaction = () => {
+	incomeSection.innerHTML =
+		'<h3 class="transactions__list__incomeArea__title">Przychód:</h3>';
+	expensesSection.innerHTML =
+		'<h3 class="transactions__list__expensesArea__title">Wydatki:</h3>';
+	wallet.textContent = '0zł';
+	moneyArr = [0];
+};
+
 add.addEventListener('click', openPanel);
 cancel.addEventListener('click', closePanel);
 save.addEventListener('click', checkForm);
 light.addEventListener('click', lightColor);
 dark.addEventListener('click', darkColor);
+deleteAll.addEventListener('click', clearAllTransaction);
