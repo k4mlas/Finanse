@@ -2,7 +2,7 @@
 
 I invite you to check my project by clicking on the link below
 
-### [Go to the page! 🙂](https://k4mlas.github.io/Finanse/)
+### [Go to the page! 🙂](https://k4mlas.github.io/Wallet/)
 <br>
 
 <img width="1440" alt="Zrzut ekranu 2023-06-23 o 16 55 53" src="https://github.com/k4mlas/Finanse/assets/112805847/3bb8a184-3fda-4096-b231-b78157ca0e94">
